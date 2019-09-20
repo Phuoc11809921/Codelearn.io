@@ -1,0 +1,14 @@
+# chuyển số decimal sang số binary
+def decimalToBinary(n): 
+    return bin(n).replace("0b","")
+    
+# kiểm tra xem nó có phải là luỹ thừa của 2 hay không
+def isPowerOfTwo(n):
+    if(n == 0):
+        return False
+    else:
+        return (n &(n-1)) == 0
+        
+# Convert a binary number to decimal number
+def BinaryTodecimal(s):
+    return int(s,2)
