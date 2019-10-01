@@ -12,3 +12,57 @@ def isPowerOfTwo(n):
 # Convert a binary number to decimal number
 def BinaryTodecimal(s):
     return int(s,2)
+# hiển thị 100 số nguyên tố đầu tiên
+import math
+def snt(n):
+    if(n <= 1):
+        return False
+    for i in range(2, int(math.sqrt(n))+ 1):
+        if(n % i == 0):
+            return False
+    return True
+def snt_100():
+    i = 2
+    arr = []
+    dem = 0
+    while(dem <= 49):
+        if(snt(i) == True):
+            dem += 1
+            arr.append(i)
+            i += 1
+        elif(snt(i) == False):
+            i += 1
+    return arr
+print(snt_100())
+# kiểm tra chuỗi palindrome(đối xứng)
+def chuoidoixung(s):
+    if(len(s) == 1):
+        return True
+    elif(int(len(s)) % 2 == 0):
+        dem = 0
+        for i in range(int(len(s)/2)):
+            for j in range(len(s)-1-i,int(len(s)/2)-1,-1):
+                if(s[i] == s[j]):
+                    dem += 1
+                    break
+                elif(s[i] != s[j]):
+                    break
+        if(dem == int(len(s)/2)):
+            return True
+        elif(dem != int(len(s)/2)):
+            return False
+    elif(int(len(s)) % 2 != 0):
+        dem = 0
+        for i in range(int(len(s)/2)):
+            for j in range(len(s)-1-i,int(len(s)/2),-1):
+                if(s[i] == s[j]):
+                    dem += 1
+                    break
+                elif(s[i] != s[j]):
+                    break
+        if(dem == int(len(s)/2)):
+            return True
+        elif(dem != int(len(s)/2)):
+            return False
+print(chuoidoixung(s))
+#
