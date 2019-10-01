@@ -65,4 +65,17 @@ def chuoidoixung(s):
         elif(dem != int(len(s)/2)):
             return False
 print(chuoidoixung(s))
+# Phân tích thừa số nguyên tố
+def primeFactors(n):
+    arr = []
+    for i in range(2,int(math.sqrt(n)) +1):
+        while(n % i == 0):
+            n = int(n / i)
+            arr.append(i)
+        if(n == 1):
+            break
+    if(n > 1):
+        arr.append(n)
+    return arr
+print(primeFactors(n))
 #
