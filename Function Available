@@ -78,4 +78,12 @@ def primeFactors(n):
         arr.append(n)
     return arr
 print(primeFactors(n))
-#
+# Ước chung lớn nhất
+def gcd(a, b):
+    t = min(a, b)
+    # Keep looping until t divides both a & b evenly
+    while(a % t != 0 or b % t != 0):
+        t -= 1
+    return t
+print(gcd(a,b))
+# 
